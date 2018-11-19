@@ -1,6 +1,7 @@
 var moment = require("moment");
 
 const time = moment().hour()+":"+moment().minute();
+// const time = "01:12"
 let hourInt = parseInt(time[0]+time[1]);
 let minuteIntOne = parseInt(time[3])
 let minuteIntTwo = parseInt(time[4]);
@@ -12,6 +13,10 @@ var merediam = "AM";
 if (hourInt > 12){
     hourInt = hourInt % 12;
     merediam = "PM"
+}
+
+if (minuteIntOne === 0 && minuteIntTwo !== 0){
+    minuteOne = "Oh"
 }
 
 switch (hourInt) {
@@ -64,8 +69,9 @@ switch (hourInt) {
 }
 
 switch (minuteIntOne) {
+
     case 1:
-        minuteOne = "One"
+        minuteOne = "Ten"
         break;
 
     case 2:
